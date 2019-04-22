@@ -1,0 +1,14 @@
+libboost_python27.so动态链接库安装
+
+1.安装python运行环境
+yum install python-devel
+
+2.指定python路径
+./bootstrap.sh --with-python=/usr/bin/python(python路径)
+
+3.编译boost
+./b2 --with-python install
+
+4.创建软链接
+cd /usr/local/lib
+ln -s /usr/local/lib/libboost_python27.so /usr/lib64/libboost_python27.so( /usr/lib64目录下不存在/usr/lib64/libboost_python27.so的情况)
